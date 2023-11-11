@@ -91,3 +91,21 @@ document.getElementById("nextButton").addEventListener("click", ()=>{
     }
     
 });
+
+const likeButton = document.getElementById("likeButton");
+let liked = false;
+
+likeButton.addEventListener("click", function() {
+    if (liked) {
+        likeButton.textContent = "Like";
+    } else {
+        likeButton.textContent = "Unlike";
+    }
+    liked = !liked;
+});
+
+const shareButton = document.getElementById("shareButton");
+
+shareButton.addEventListener("click", function() {
+    window.location.href = "mailto:?subject=Check out my trading card&body=Here's the link to my trading card: " + window.location.href;
+});
